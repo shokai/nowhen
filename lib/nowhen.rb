@@ -1,5 +1,4 @@
 require "nowhen/version"
 
-module Nowhen
-  # Your code goes here...
+module NoWhen
 end

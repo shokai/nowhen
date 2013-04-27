@@ -5,15 +5,15 @@ require 'nowhen/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "nowhen"
-  spec.version       = Nowhen::VERSION
+  spec.version       = NoWhen::VERSION
   spec.authors       = ["Sho Hashimoto"]
   spec.email         = ["hashimoto@shokai.org"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Tagger for Life Log}
+  spec.summary       = spec.description
+  spec.homepage      = "https://github.com/shokai/nowhen"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = `git ls-files`.split($/).reject{|i| i == "Gemfile.lock" }
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]

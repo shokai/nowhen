@@ -1,26 +1,32 @@
-# Nowhen
+nowhen
+======
+Tagger for Life Log
 
-TODO: Write a gem description
 
-## Installation
+Installation
+------------
 
-Add this line to your application's Gemfile:
+    % gem install nowhen
 
-    gem 'nowhen'
 
-And then execute:
+Usage
+-----
 
-    $ bundle
+    % now yummy
+    % when yummy
 
-Or install it yourself as:
 
-    $ gem install nowhen
+Test
+----
 
-## Usage
+    % gem install bundler
+    % bundle install
+    % bin/now todo
+    % bin/when todo
 
-TODO: Write usage instructions here
 
-## Contributing
+Contributing
+------------
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)

@@ -20,11 +20,17 @@ module NoWhen
       elsif parser.has_option? :version
         STDERR.puts "nowhen version #{NoWhen::VERSION}"
       elsif parser.has_param? :when
+        tags = NoWhen::Model::Tag.find :what => parser[:when]
+        tags.each do |tag|
+          puts tag
+        end
       elsif !parser.argv.empty?
-        what = parser.argv[0]
+        what = parser.argv[0].strip
         tag = NoWhen::Model::Tag.new(:what => what)
         tag.save
-        puts "tagged \"#{what}\" at #{tag.created_at}"
+        puts "tagged \"#{what}\" -> #{tag.created_at}"
+      else
+        STDERR.puts "argument error!"
       end
     end
   end

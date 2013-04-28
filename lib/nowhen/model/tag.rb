@@ -16,8 +16,9 @@ module NoWhen
         self.all query
       end
 
-      def logs(range=60*5)
-        Log.find :created_at => (self.created_at.to_time-range)..(self.created_at.to_time+range)
+      def logs(minute=5)
+        rational = Rational(1, 24*60/minute)
+        Log.find :created_at => (self.created_at-rational)..(self.created_at+rational)
       end
 
       def to_s

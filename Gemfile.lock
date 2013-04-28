@@ -3,6 +3,7 @@ PATH
   specs:
     nowhen (0.0.1)
       args_parser
+      backports
       data_mapper
       dm-sqlite-adapter
 
@@ -11,6 +12,7 @@ GEM
   specs:
     addressable (2.2.8)
     args_parser (0.1.4)
+    backports (3.1.1)
     bcrypt-ruby (3.0.1)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)

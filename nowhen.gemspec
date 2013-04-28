@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "args_parser"
   spec.add_dependency "data_mapper"
   spec.add_dependency "dm-sqlite-adapter"
+  spec.add_dependency "backports"
 end

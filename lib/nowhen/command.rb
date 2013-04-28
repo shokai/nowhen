@@ -10,6 +10,7 @@ module NoWhen
         STDERR.puts
         STDERR.puts "e.g."
         STDERR.puts "  % now yummy"
+        STDERR.puts "  % now -log http://example.com/delicious_food_recipe"
         STDERR.puts "  % when yummy"
     end
 

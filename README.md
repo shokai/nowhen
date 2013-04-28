@@ -12,8 +12,15 @@ Installation
 Usage
 -----
 
+    % now --help
+
+log
+
     % now yummy
     % now -log http://example.com/food
+
+search
+
     % when yummy
 
 

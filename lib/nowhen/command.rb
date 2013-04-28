@@ -49,6 +49,5 @@ module NoWhen
         end
       end
     end
-
   end
 end

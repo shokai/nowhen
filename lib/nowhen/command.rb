@@ -58,6 +58,9 @@ module NoWhen
         tags = NoWhen::Model::Tag.find query
         tags.each do |tag|
           puts tag
+          tag.logs.each do |log|
+            puts " - #{log.log}"
+          end
         end
       end
     end

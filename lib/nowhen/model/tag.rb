@@ -16,8 +16,12 @@ module NoWhen
         self.all query
       end
 
+      def logs(range=60*5)
+        Log.find :created_at => (self.created_at.to_time-range)..(self.created_at.to_time+range)
+      end
+
       def to_s
-        "#{self.created_at.strftime '[%m/%d %a] (%H:%M:%S)'} \"#{self.what}\""
+        "[#{self.what}]\t#{self.created_at.strftime '(%m/%d %a %H:%M:%S)'}"
       end
     end
   end

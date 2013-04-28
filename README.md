@@ -13,6 +13,7 @@ Usage
 -----
 
     % now yummy
+    % now -log http://example.com/food
     % when yummy
 
 

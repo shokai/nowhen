@@ -41,14 +41,12 @@ module NoWhen
         show_help parser
       elsif parser.has_option? :version
         STDERR.puts "nowhen version #{NoWhen::VERSION}"
-      elsif !parser.argv.empty?
-        what = parser.argv[0].strip
-        tags = NoWhen::Model::Tag.find :what => what
+      else
+        query = parser.argv.empty? ? {} : {:what => parser.argv[0].strip}
+        tags = NoWhen::Model::Tag.find query
         tags.each do |tag|
           puts tag
         end
-      else
-        show_help parser
       end
     end
 

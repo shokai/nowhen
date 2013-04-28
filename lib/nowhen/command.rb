@@ -26,7 +26,7 @@ module NoWhen
         what = parser.argv[0].strip
         tag = NoWhen::Model::Tag.new(:what => what)
         tag.save
-        puts "tagged \"#{what}\" -> #{tag.created_at}"
+        puts tag
       else
         show_help parser
       end

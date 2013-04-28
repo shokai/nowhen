@@ -17,7 +17,7 @@ module NoWhen
       end
 
       def to_s
-        "#{self.what} - #{self.created_at}"
+        "#{self.created_at.strftime '[%m/%d %a] (%H:%M:%S)'} \"#{self.what}\""
       end
     end
   end

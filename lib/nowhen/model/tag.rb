@@ -10,7 +10,7 @@ module NoWhen
       property :longitude, Float
 
       def self.find(query={})
-        {:order => [:created_at.desc], :limit => 40}.each do |k,v|
+        {:order => [:created_at.asc], :limit => 40}.each do |k,v|
           query[k] = v unless query.include? k
         end
         self.all(query)

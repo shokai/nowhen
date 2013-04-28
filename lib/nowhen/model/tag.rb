@@ -13,7 +13,7 @@ module NoWhen
         {:order => [:created_at.asc], :limit => 40}.each do |k,v|
           query[k] = v unless query.include? k
         end
-        self.all(query)
+        self.all query
       end
 
       def to_s

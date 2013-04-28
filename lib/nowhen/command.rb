@@ -15,6 +15,8 @@ module NoWhen
 
     def self.now(argv)
       parser = ArgsParser.parse argv do
+        arg :log, 'save log'
+        arg :db_upgrade, 'upgrade database'
         arg :version, 'show version', :alias => :v
         arg :help, 'show help', :alias => :h
       end
@@ -22,6 +24,13 @@ module NoWhen
         show_help parser
       elsif parser.has_option? :version
         STDERR.puts "nowhen version #{NoWhen::VERSION}"
+      elsif parser.has_option? :db_upgrade
+        NoWhen::Model.upgrade
+      elsif parser[:log]
+        log = parser.has_param?(:log) ? parser[:log] : parser.argv.join(' ')
+        log = NoWhen::Model::Log.new(:log => log)
+        log.save
+        p log
       elsif !parser.argv.empty?
         what = parser.argv[0].strip
         tag = NoWhen::Model::Tag.new(:what => what)

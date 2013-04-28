@@ -1,6 +1,7 @@
 require "data_mapper"
 require "dm-sqlite-adapter"
 require "nowhen/model/tag"
+require "nowhen/model/log"
 require "fileutils"
 
 module NoWhen
@@ -16,6 +17,11 @@ module NoWhen
     def self.migrate
       require 'dm-migrations'
       DataMapper.auto_migrate!
+    end
+
+    def self.upgrade
+      require 'dm-migrations'
+      DataMapper.auto_upgrade!
     end
   end
 end

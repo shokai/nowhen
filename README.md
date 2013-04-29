@@ -32,6 +32,10 @@ Test
     % bin/now todo
     % bin/when todo
 
+change DB path
+
+    % export NOWHEN_DB=./tmp/db
+
 
 Contributing
 ------------

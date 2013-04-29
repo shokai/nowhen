@@ -31,7 +31,7 @@ module NoWhen
         log = parser.has_param?(:log) ? parser[:log] : parser.argv.join(' ')
         log = NoWhen::Model::Log.new(:log => log)
         log.save
-        p log
+        puts log.log
       elsif !parser.argv.empty?
         what = parser.argv[0].strip
         tag = NoWhen::Model::Tag.new(:what => what)

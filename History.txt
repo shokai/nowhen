@@ -1,3 +1,8 @@
+=== 0.0.3 2013-04-29
+
+* when --all
+* set DB path ENV['NOWHEN_DB']
+
 === 0.0.2 2013-04-29
 
 * upgrade database : now --db_upgrade

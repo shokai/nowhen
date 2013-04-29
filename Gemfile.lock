@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nowhen (0.0.2)
+    nowhen (0.0.3)
       args_parser
       backports
       data_mapper

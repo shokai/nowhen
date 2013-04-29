@@ -22,6 +22,7 @@ log
 search
 
     % when yummy
+    % when yummy --all
 
 
 Test

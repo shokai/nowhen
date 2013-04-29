@@ -45,6 +45,7 @@ module NoWhen
     def self.when(argv)
       parser = ArgsParser.parse argv do
         arg :limit, 'tags count', :default => 40
+        arg :all, 'disable tag count limit'
         arg :version, 'show version', :alias => :v
         arg :help, 'show help', :alias => :h
       end
@@ -55,7 +56,7 @@ module NoWhen
       else
         query = {}
         query[:what] = parser.argv[0].strip unless parser.argv.empty?
-        query[:limit] = parser[:limit]
+        query[:limit] = parser[:limit] unless parser.has_option? :all
         tags = NoWhen::Model::Tag.find query
         tags.each do |tag|
           puts tag

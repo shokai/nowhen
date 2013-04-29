@@ -7,7 +7,7 @@ module NoWhen
       property :log, String, :required => true, :length => 0...2048
 
       def self.find(query={})
-        {:order => [:created_at.asc], :limit => 40}.each do |k,v|
+        {:order => [:created_at.asc]}.each do |k,v|
           query[k] = v unless query.include? k
         end
         self.all query
